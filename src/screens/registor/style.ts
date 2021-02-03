@@ -13,12 +13,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 25,
     height: 50,
-    marginBottom: 20,
     padding: 20,
     borderBottomWidth: 0,
   },
   containerOutInput: {
     alignItems: 'center',
+    margin: 0,
+    padding: 0,
   },
   buttonStyle: {
     backgroundColor: '#f75c5e',
@@ -30,6 +31,6 @@ export const styles = StyleSheet.create({
   ContainerHeaderText: {
     marginVertical: 30,
   },
-  containerText: {marginTop: 30},
-  text: {color: '#fff'},
+  containerText: {flexDirection: 'row', marginTop: 20},
+  text: {marginHorizontal: 10, color: '#788eec'},
 });

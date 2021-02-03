@@ -11,14 +11,24 @@ import Transaction from '../screens/transaction';
 import Planing from '../screens/planing';
 import Account from '../screens/account';
 import Report from '../screens/report';
+
+import Login from '../screens/login';
+import Registor from '../screens/registor';
 // Undefine for stack that mean dosen't have params
-type RootStackParams = {
+
+export enum AppSceen {
+  home = 'home',
+  login = 'login',
+  registor = 'registor',
+}
+
+export type RootStackParams = {
   home: undefined;
   login: undefined;
   registor: undefined;
 };
 
-type RootTabParams = {
+export type RootTabParams = {
   transaction: undefined;
   report: undefined;
   planing: undefined;
@@ -85,8 +95,10 @@ const Routes = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="home" headerMode="none">
-          <Stack.Screen name="home" component={TabScreenHome} />
+        <Stack.Navigator initialRouteName={AppSceen.login} headerMode="none">
+          <Stack.Screen name={AppSceen.home} component={TabScreenHome} />
+          <Stack.Screen name={AppSceen.login} component={Login} />
+          <Stack.Screen name={AppSceen.registor} component={Registor} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
