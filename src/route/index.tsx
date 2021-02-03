@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Icon} from 'react-native-elements';
+import {AppScreen} from './init';
 // Component
 
 import Transaction from '../screens/transaction';
@@ -15,12 +16,6 @@ import Report from '../screens/report';
 import Login from '../screens/login';
 import Registor from '../screens/registor';
 // Undefine for stack that mean dosen't have params
-
-export enum AppSceen {
-  home = 'home',
-  login = 'login',
-  registor = 'registor',
-}
 
 export type RootStackParams = {
   home: undefined;
@@ -95,10 +90,10 @@ const Routes = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={AppSceen.login} headerMode="none">
-          <Stack.Screen name={AppSceen.home} component={TabScreenHome} />
-          <Stack.Screen name={AppSceen.login} component={Login} />
-          <Stack.Screen name={AppSceen.registor} component={Registor} />
+        <Stack.Navigator initialRouteName={AppScreen.home} headerMode="none">
+          <Stack.Screen name={AppScreen.home} component={TabScreenHome} />
+          <Stack.Screen name={AppScreen.login} component={Login} />
+          <Stack.Screen name={AppScreen.registor} component={Registor} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

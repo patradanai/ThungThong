@@ -4,6 +4,9 @@ import withObservables from '@nozbe/with-observables';
 import {withDatabase} from '@nozbe/watermelondb/DatabaseProvider';
 import {useDatabase} from '@nozbe/watermelondb/hooks';
 
+// Component
+import TransactionCard from '../../components/transactionCard';
+
 interface Props {
   transactions: any;
   database: any;
@@ -23,8 +26,8 @@ const Transaction: React.FC<Props> = ({transactions, navigation, database}) => {
 
   return (
     <>
-      <View>
-        <Button title="add" onPress={addTransaction} />
+      <View style={{flex: 1}}>
+        <TransactionCard />
       </View>
     </>
   );

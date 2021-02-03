@@ -22,7 +22,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <DatabaseProvider database={database}>
-        <Route database={database} />
+        <Route />
       </DatabaseProvider>
     </ThemeProvider>
   );

@@ -1,11 +1,12 @@
 import React from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity, Image} from 'react-native';
 import {Button, Input, Text} from 'react-native-elements';
 import {styles} from './style';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {AppSceen, RootStackParams} from '../../route';
+import {RootStackParams} from '../../route';
+import {AppScreen} from '../../route/init';
 
-type ScreenProps = StackNavigationProp<RootStackParams, AppSceen.login>;
+type ScreenProps = StackNavigationProp<RootStackParams, AppScreen.login>;
 
 interface LoginScreenProps {
   navigation: ScreenProps;
@@ -14,6 +15,10 @@ interface LoginScreenProps {
 const Login: React.FC<LoginScreenProps> = ({navigation}) => {
   return (
     <View style={styles.container}>
+      <Image
+        style={styles.image}
+        source={require('../../images/thungthong.png')}
+      />
       <View style={styles.ContainerHeaderText}>
         <Text h1>Ledger</Text>
       </View>
@@ -32,7 +37,7 @@ const Login: React.FC<LoginScreenProps> = ({navigation}) => {
       <Button title="Get Started" buttonStyle={styles.buttonStyle} />
       <View style={styles.containerText}>
         <TouchableOpacity
-          onPress={() => navigation.navigate(AppSceen.registor)}>
+          onPress={() => navigation.navigate(AppScreen.registor)}>
           <Text style={styles.text}>Signup</Text>
         </TouchableOpacity>
       </View>

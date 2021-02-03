@@ -3,15 +3,16 @@ import {View, TouchableOpacity} from 'react-native';
 import {Button, Input, Text} from 'react-native-elements';
 import {styles} from './style';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {AppSceen, RootStackParams} from '../../route';
+import {RootStackParams} from '../../route';
+import {AppScreen} from '../../route/init';
 
-type ScreenProps = StackNavigationProp<RootStackParams, AppSceen.registor>;
+type ScreenProps = StackNavigationProp<RootStackParams, AppScreen.registor>;
 
-interface LoginScreenProps {
+interface RegistorScreenProps {
   navigation: ScreenProps;
 }
 
-const Registor: React.FC<LoginScreenProps> = ({navigation}) => {
+const Registor: React.FC<RegistorScreenProps> = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.ContainerHeaderText}>
@@ -44,7 +45,7 @@ const Registor: React.FC<LoginScreenProps> = ({navigation}) => {
       <Button title="Create account" buttonStyle={styles.buttonStyle} />
       <View style={styles.containerText}>
         <Text style={{color: '#fff'}}>Already got an account?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate(AppSceen.login)}>
+        <TouchableOpacity onPress={() => navigation.navigate(AppScreen.login)}>
           <Text style={styles.text}>Login</Text>
         </TouchableOpacity>
       </View>

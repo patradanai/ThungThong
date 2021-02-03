@@ -71,6 +71,10 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>PalanquinDark-Bold.ttf</string>
+		<string>PalanquinDark-Medium.ttf</string>
+		<string>PalanquinDark-Regular.ttf</string>
+		<string>PalanquinDark-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>
