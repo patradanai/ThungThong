@@ -9,28 +9,22 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-// import 'react-native-gesture-handler';
+import {StyleSheet} from 'react-native';
+import 'react-native-gesture-handler';
 import {Button, ThemeProvider} from 'react-native-elements';
+import Route from './src/route';
+import DatabaseProvider from '@nozbe/watermelondb/DatabaseProvider';
+import database from './src/model/index';
 
 declare const global: {HermesInternal: null | {}};
 
 const App = () => {
   return (
-    <>
-      <SafeAreaView>
-        <ThemeProvider>
-          <Button title="Hey!" />
-        </ThemeProvider>
-      </SafeAreaView>
-    </>
+    <ThemeProvider>
+      <DatabaseProvider database={database}>
+        <Route database={database} />
+      </DatabaseProvider>
+    </ThemeProvider>
   );
 };
 
