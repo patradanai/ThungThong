@@ -41,6 +41,27 @@ const DayComponent: React.FC<any> = ({
     return style;
   };
 
+  const getMarkStyle: any = () => {
+    const style = {
+      color: '#c1c2c1',
+    };
+
+    if (marking.amount) {
+      style.color = 'red';
+    }
+
+    return style;
+  };
+
+  const getMarkLedger: any = () => {
+    if (typeof marking === 'object') {
+      if (marking.amount) {
+        return marking.amount;
+      }
+    }
+    return '-';
+  };
+
   const contentStyle = getContentStyle();
   return (
     <Fragment>
@@ -52,8 +73,13 @@ const DayComponent: React.FC<any> = ({
             {String(children)}
           </Text>
         </TouchableOpacity>
-        <View>
-          <Text>1</Text>
+        <View style={styles.textContainer}>
+          <Text
+            style={[styles.subText, getMarkStyle()]}
+            ellipsizeMode="clip"
+            numberOfLines={1}>
+            {getMarkLedger()}
+          </Text>
         </View>
       </View>
     </Fragment>

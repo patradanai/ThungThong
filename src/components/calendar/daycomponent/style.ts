@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 10,
+    margin: 15,
   },
   content: {
     width: 36,
@@ -15,5 +15,13 @@ export const styles = StyleSheet.create({
   },
   contentText: {
     fontSize: 14,
+  },
+  subText: {
+    fontSize: 10,
+    fontWeight: '700',
+  },
+  textContainer: {
+    alignItems: 'center',
+    width: 40,
   },
 });

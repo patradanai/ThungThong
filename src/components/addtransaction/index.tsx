@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {View, TouchableOpacity} from 'react-native';
-import {Text, Button, Overlay} from 'react-native-elements';
+import {Text, Overlay} from 'react-native-elements';
 import {styles} from './style';
-import {Icon} from 'react-native-elements';
+import {Input, Icon, Button} from 'react-native-elements';
 
 const AddTransaction = () => {
   const [visible, setVisible] = useState(false);
@@ -35,7 +35,10 @@ const AddTransaction = () => {
               <Text>Save</Text>
             </TouchableOpacity>
           </View>
-          <Text>Hello from Overlay!</Text>
+          <Input placeholder="Amount" />
+          <Input placeholder="Category" />
+          <Input placeholder="Date" />
+          <Input placeholder="Note" multiline={true} numberOfLines={4} />
         </View>
       </Overlay>
     </View>
