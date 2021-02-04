@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 20,
     backgroundColor: '#fff',
+    height: 80,
   },
   image: {
     width: 45,

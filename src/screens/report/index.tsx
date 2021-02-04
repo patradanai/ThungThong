@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, SafeAreaView, Text} from 'react-native';
-import withObservables from '@nozbe/with-observables';
-
+import Calendar from '../../components/calendar';
 interface Props {
   amount: Number;
   note: String;
@@ -10,12 +9,11 @@ interface Props {
 const Report: React.FC<Props> = (props) => {
   console.log(props);
   return (
-    <>
+    <SafeAreaView>
       <View>
-        <Text>{}</Text>
+        <Calendar />
       </View>
-      <Text>sdasdssssssssssssssssssssssssssssssssss</Text>
-    </>
+    </SafeAreaView>
   );
 };
 

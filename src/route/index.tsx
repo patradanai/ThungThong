@@ -1,5 +1,5 @@
-import ts from 'typescript';
 import React from 'react';
+import {View, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -7,7 +7,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Icon} from 'react-native-elements';
 import {AppScreen} from './init';
 // Component
-
+import AddTransaction from '../components/addtransaction';
 import Transaction from '../screens/transaction';
 import Planing from '../screens/planing';
 import Account from '../screens/account';
@@ -24,6 +24,7 @@ export type RootStackParams = {
 };
 
 export type RootTabParams = {
+  addtransaction: undefined;
   transaction: undefined;
   report: undefined;
   planing: undefined;
@@ -43,15 +44,22 @@ const TabScreenHome = () => {
           fontSize: 12,
         },
         tabStyle: {marginTop: 5},
+        showLabel: false,
       }}>
       <Tab.Screen
         name="transaction"
         component={Transaction}
         options={{
           tabBarLabel: 'Transaction',
-          tabBarIcon: ({color}) => (
-            <Icon name="account-balance-wallet" color={color} size={35} />
-          ),
+          tabBarIcon: ({color, focused}) => {
+            if (focused) {
+              return (
+                <Icon name="account-balance-wallet" color={color} size={25} />
+              );
+            } else {
+              return <Icon name="attach-money" color={color} size={25} />;
+            }
+          },
         }}
       />
       <Tab.Screen
@@ -60,8 +68,16 @@ const TabScreenHome = () => {
         options={{
           tabBarLabel: 'Report',
           tabBarIcon: ({color}) => (
-            <Icon name="data-usage" color={color} size={35} />
+            <Icon name="data-usage" color={color} size={25} />
           ),
+        }}
+      />
+      <Tab.Screen
+        name="addtransaction"
+        component={Planing}
+        options={{
+          tabBarLabel: 'Plan',
+          tabBarButton: () => <AddTransaction />,
         }}
       />
       <Tab.Screen
@@ -69,7 +85,7 @@ const TabScreenHome = () => {
         component={Planing}
         options={{
           tabBarLabel: 'Plan',
-          tabBarIcon: ({color}) => <Icon name="flag" color={color} size={35} />,
+          tabBarIcon: ({color}) => <Icon name="flag" color={color} size={25} />,
         }}
       />
       <Tab.Screen
@@ -78,7 +94,7 @@ const TabScreenHome = () => {
         options={{
           tabBarLabel: 'Account',
           tabBarIcon: ({color}) => (
-            <Icon name="account-circle" color={color} size={35} />
+            <Icon name="account-circle" color={color} size={25} />
           ),
         }}
       />
@@ -99,5 +115,14 @@ const Routes = () => {
     </SafeAreaProvider>
   );
 };
+
+const styles = StyleSheet.create({
+  buttonAdd: {
+    borderWidth: 2,
+    borderRadius: 10,
+    height: 30,
+    backgroundColor: '#000',
+  },
+});
 
 export default Routes;
