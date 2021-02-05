@@ -23,10 +23,18 @@ export const styles = StyleSheet.create({
     height: 50,
   },
   containerText: {
-    width: windowWidth,
-    height: '80%',
+    width: '80%',
+    height: '100%',
     justifyContent: 'center',
     marginLeft: 20,
+    paddingBottom: 10,
     borderBottomWidth: 1,
+  },
+  containerInput: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    overflow: 'hidden',
+    width: '100%',
+    height: 70,
   },
 });

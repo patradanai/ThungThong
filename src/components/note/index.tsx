@@ -1,14 +1,11 @@
 import React, {useState} from 'react';
-import {View, TouchableOpacity, Dimensions} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import {Text} from 'react-native-elements';
 import {styles} from './style';
 import {Input, Icon, Button} from 'react-native-elements';
 import Modal from 'react-native-modal';
 
-const deviceWidth = Dimensions.get('window').width;
-const deviceHeight = Dimensions.get('window').height;
-
-const AddTransaction = () => {
+const Noted = () => {
   const [visible, setVisible] = useState(false);
 
   const toggleOverlay = () => {
@@ -17,17 +14,19 @@ const AddTransaction = () => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={toggleOverlay} activeOpacity={0.1}>
-        <View style={{flexDirection: 'row', height: 55, alignItems: 'center'}}>
-          <View style={styles.button}></View>
+      <TouchableOpacity onPress={toggleOverlay}>
+        <View style={[styles.containerInput, {height: 45}]}>
+          <View style={styles.dateIcon}>
+            <Icon name="list" type="font-awesome" size={25} />
+          </View>
           <View style={styles.containerText}>
-            <Text style={{color: '#bcbcbc', fontSize: 18}}>Wallet</Text>
+            <Text style={{color: '#bcbcbc', fontSize: 18}}>Note</Text>
           </View>
         </View>
       </TouchableOpacity>
 
       <Modal
-        testID={'wallet'}
+        testID={'note'}
         isVisible={visible}
         animationIn="slideInRight"
         animationOut="slideOutRight"
@@ -38,7 +37,7 @@ const AddTransaction = () => {
             <TouchableOpacity onPress={toggleOverlay}>
               <Icon name="close" />
             </TouchableOpacity>
-            <Text h4>Currency</Text>
+            <Text h4>Noted</Text>
             <TouchableOpacity>
               <Text>Save</Text>
             </TouchableOpacity>
@@ -50,4 +49,4 @@ const AddTransaction = () => {
   );
 };
 
-export default AddTransaction;
+export default Noted;

@@ -8,7 +8,7 @@ import Modal from 'react-native-modal';
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 
-const AddTransaction = () => {
+const Category = () => {
   const [visible, setVisible] = useState(false);
 
   const toggleOverlay = () => {
@@ -18,7 +18,7 @@ const AddTransaction = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={toggleOverlay} activeOpacity={0.1}>
-        <View style={{flexDirection: 'row', height: 70, alignItems: 'center'}}>
+        <View style={[styles.containerInput, {height: 55}]}>
           <View style={styles.button}></View>
           <View style={styles.containerText}>
             <Text style={{color: '#bcbcbc', fontSize: 18}}>Category</Text>
@@ -50,4 +50,4 @@ const AddTransaction = () => {
   );
 };
 
-export default AddTransaction;
+export default Category;

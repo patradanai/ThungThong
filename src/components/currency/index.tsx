@@ -5,7 +5,7 @@ import {styles} from './style';
 import {Input, Icon, Button} from 'react-native-elements';
 import Modal from 'react-native-modal';
 
-const AddTransaction = () => {
+const Currency = () => {
   const [visible, setVisible] = useState(false);
 
   const toggleOverlay = () => {
@@ -45,4 +45,4 @@ const AddTransaction = () => {
   );
 };
 
-export default AddTransaction;
+export default Currency;

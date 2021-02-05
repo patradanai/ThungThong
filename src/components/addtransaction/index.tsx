@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, TouchableOpacity, Platform, SafeAreaView} from 'react-native';
-import {Text} from 'react-native-elements';
+import {Text, Card} from 'react-native-elements';
 import moment from 'moment';
 import {styles} from './style';
 import {Input, Icon, Button} from 'react-native-elements';
@@ -11,6 +11,8 @@ import CurrenyModal from '../currency';
 import Category from '../category';
 import CalendarPicker from '../calendarpicker';
 import Wallet from '../wallet';
+import Note from '../note';
+
 const AddTransaction = () => {
   const [visible, setVisible] = useState<boolean>(false);
   const [showCalendar, setShowCalendar] = useState<boolean>(false);
@@ -43,20 +45,13 @@ const AddTransaction = () => {
         icon={<Icon name="add" size={20} color="#fff" />}
         onPress={toggleOverlay}
       />
-
       <Modal
         isVisible={visible}
         onBackdropPress={toggleOverlay}
         swipeDirection={['right', 'down']}
         propagateSwipe={true}
         style={{margin: 0}}>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            backgroundColor: '#eaeaea',
-          }}>
+        <View style={styles.containerModal}>
           <View style={styles.headerSheet}>
             <TouchableOpacity onPress={toggleOverlay}>
               <Icon name="close" />
@@ -68,16 +63,16 @@ const AddTransaction = () => {
               <Text>Save</Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.contentSheet}>
-            <View style={styles.containerInput}>
+          <Card containerStyle={styles.contentSheet}>
+            <View style={[styles.containerInput, {height: 70}]}>
               <CurrenyModal />
               <Input
                 placeholder="Amount"
                 keyboardType="number-pad"
-                containerStyle={{width: '100%', height: 50}}
+                containerStyle={{width: '81%', height: 50}}
               />
             </View>
-            <View style={styles.containerInput}>
+            <View style={[styles.containerInput, {height: 70}]}>
               <Category />
             </View>
             <TouchableOpacity onPress={stateCalendar}>
@@ -92,17 +87,13 @@ const AddTransaction = () => {
                 </View>
               </View>
             </TouchableOpacity>
-            <View style={styles.containerInput}>
+            <View style={[styles.containerInput, {height: 70}]}>
               <Wallet />
             </View>
-            <View style={styles.containerInput}>
-              <TouchableOpacity onPress={stateCalendar}>
-                <View style={styles.dateIcon}>
-                  <Icon name="list" type="font-awesome" size={25} />
-                </View>
-              </TouchableOpacity>
+            <View style={[styles.containerInput, {height: 50}]}>
+              <Note />
             </View>
-          </View>
+          </Card>
         </View>
       </Modal>
       <CalendarPicker

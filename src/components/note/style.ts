@@ -2,17 +2,17 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+
 export const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    marginHorizontal: 10,
+    width: '100%',
+    // marginHorizontal: 10,
   },
   button: {
-    height: 50,
+    height: 30,
     width: 50,
-    borderWidth: 1,
-    borderRadius: 50,
   },
   headerSheet: {
     flexDirection: 'row',
@@ -22,12 +22,27 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: 50,
   },
+  dateIcon: {
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    marginHorizontal: 10,
+    marginVertical: 10,
+  },
   containerText: {
-    width: '80%',
+    width: '77%',
     height: '100%',
     justifyContent: 'center',
-    marginLeft: 20,
     paddingBottom: 10,
+    marginLeft: 20,
     borderBottomWidth: 1,
+  },
+  containerInput: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+    width: '100%',
+    height: 70,
   },
 });
