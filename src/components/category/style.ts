@@ -2,7 +2,6 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-
 export const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
@@ -10,41 +9,24 @@ export const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   button: {
-    backgroundColor: '#000',
+    height: 50,
+    width: 50,
+    borderWidth: 1,
+    borderRadius: 50,
   },
   headerSheet: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     paddingHorizontal: 5,
     backgroundColor: 'white',
-    width: '100%',
     height: 50,
-  },
-  contentSheet: {
-    marginTop: 30,
-    width: '100%',
-    backgroundColor: '#fff',
-    paddingVertical: 10,
-  },
-  dateIcon: {
-    marginHorizontal: 10,
-    marginVertical: 10,
-    width: 50,
-  },
-  containerInput: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    overflow: 'hidden',
-    width: windowWidth,
-    height: 70,
   },
   containerText: {
     width: windowWidth,
-    height: '100%',
+    height: '80%',
     justifyContent: 'center',
-    marginLeft: 10,
-    paddingBottom: 10,
+    marginLeft: 20,
     borderBottomWidth: 1,
   },
 });

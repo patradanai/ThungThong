@@ -5,7 +5,6 @@ import {withDatabase} from '@nozbe/watermelondb/DatabaseProvider';
 import {useDatabase} from '@nozbe/watermelondb/hooks';
 
 // Component
-import TransactionCard from '../../components/transactionCard';
 
 interface Props {
   transactions: any;
@@ -26,9 +25,7 @@ const Transaction: React.FC<Props> = ({transactions, navigation, database}) => {
 
   return (
     <>
-      <View style={{flex: 1}}>
-        <TransactionCard />
-      </View>
+      <View style={{flex: 1}}></View>
     </>
   );
 };

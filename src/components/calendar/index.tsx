@@ -10,7 +10,7 @@ const CalendarComponent: React.FC<CalendarProps> = () => {
   return (
     <Fragment>
       <View style={{flex: 1}}>
-        <View style={{minHeight: 500}}>
+        <View style={{minHeight: 100}}>
           <Calendar
             style={{
               paddingLeft: 0,
@@ -18,9 +18,7 @@ const CalendarComponent: React.FC<CalendarProps> = () => {
             }}
             theme={{
               'stylesheet.calendar.main': {
-                monthView: {
-                  paddingBottom: 20,
-                },
+                monthView: {paddingBottom: 20},
               },
             }}
             markingType={'custom'}
