@@ -60,7 +60,9 @@ const AddTransaction = () => {
               Add Transaction
             </Text>
             <TouchableOpacity>
-              <Text>Save</Text>
+              <Text style={{fontSize: 14, fontFamily: 'PalanquinDark-Bold'}}>
+                Save
+              </Text>
             </TouchableOpacity>
           </View>
           <Card containerStyle={styles.contentSheet}>
